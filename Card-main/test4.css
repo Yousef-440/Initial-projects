@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #f3f5f5;
+}body{
+    height: 100vh;
+    background-color: #121321;
+    width: 100%;
+}
+
+section{
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+section::before{
+    content: '';
+    position: absolute;
+    background:linear-gradient(90deg, #9c27b0 ,#f3f5f5);
+    height: 240px;
+    width: 240px;
+    transform: translate(-190px , -90px);
+    border-radius: 50%;
+}
+section::after{
+    content: '';
+    position: absolute;
+    background:linear-gradient(90deg, #9c27b0 ,#f3f5f5);
+    height: 240px;
+    width: 240px;
+    transform: translate(190px , 90px);
+    border-radius: 50%;
+}
+
+.container{
+    position: relative;
+    height: 300px;
+    width: 500px;
+    z-index: 100;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+.container:hover{
+    transform: rotateY(180deg);
+}
+.container .card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    backface-visibility: hidden;
+}
+@media (max-width:767px){
+    .container{
+        width: 100%;
+    }
+    .container .card{
+        width: 100%;
+    }
+}
+.front-fase header , .front-fase .logo{
+    display: flex;
+    align-items: center;
+}
+.front-fase header{
+    justify-content: space-between;
+}
+.front-fase .logo img{
+    width: 60px;
+    margin-right: 10px;
+}
+h4{
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #f3f5f5;
+    font-weight: 700;
+}
+.front-fase .chip{
+    width: 50px;
+}
+.front-fase .card-details{
+    display: flex;
+    margin-top: 50px;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+h6{
+    font-size: 16px;
+    color: #f3f5f5;
+    font-weight: 600;
+}
+h5.num{
+    color: #f3f5f5;
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+}
+h5.number{
+    font-size: 25px;
+    color: #f3f5f5;
+    letter-spacing: 2px;
+    margin-top: 5.5px;
+}
+h5.name{
+    font-size: 25px;
+    color: #f3f5f5;
+    margin-top: 28px;
+}
+.card.back-face{
+    border: none;
+    padding: 15px 25px 25px;
+    transform: rotateY(180deg);
+}
+.card.back-face h6{
+    font-size: 11px;
+    letter-spacing: 0.75px;
+    font-weight: 900;
+}
+.card.back-face .strip{
+    position: absolute;
+    height: 45px;
+    width: 100%;
+    background-color: #000;
+    top: 40px;
+    left: 0;
+}
+.card.back-face .signiture{
+    margin-top: 90px;
+    height: 40px;
+    width: 85%;
+    border-radius: 8px;
+    background: repeating-linear-gradient(
+        #fff ,
+        #fff 3px ,
+        #efefef 0px , 
+        #efefef 9px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.signiture i{
+    color: #000;
+    margin-right: -30px;
+    background-color: #fff;
+    padding: 4px 6px;
+    border-radius: 5px;
+    z-index: -1;
+}
+.card.back-face h5{
+    font-size: 15px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
